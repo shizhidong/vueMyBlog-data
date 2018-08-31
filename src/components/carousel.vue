@@ -1,6 +1,6 @@
 <template>
   <el-carousel indicator-position="none"  :interval="number" height="400px">
-    <el-carousel-item v-for="(item,index) in picList" :key="index" >
+    <el-carousel-item v-for="(item,index) in picList" :key="index">
       <img :src="item.img">
     </el-carousel-item>
   </el-carousel>
