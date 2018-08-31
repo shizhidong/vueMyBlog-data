@@ -10,6 +10,7 @@
         data(){
             return{
                 number:3000,
+                
                 picList: [{
                         "id":"1",
                         "img":"../../static/images/timg.jpg"
