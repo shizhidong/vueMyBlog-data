@@ -17,16 +17,33 @@ html,body{
     background-color: #f6f6f6;
     
 }
-html{
-    font-size: 100px;
-    margin-top:-85px;
+
+/*移动端适配 width|height|font-size = 视觉稿量出来的值 / 100rem;@lbl*/
+@media screen and (max-width:359px) and (min-width:320px) {
+    html,body{
+        font-size: 50px !important;/*i5宽度*/
+    }
 }
-@media(max-width:540px){ html { font-size:84.375px; } } /*Android常用宽度*/
-@media(max-width:480px){ html { font-size:75px; } }		/*Android常用宽度*/
-@media(max-width:414px){ html { font-size:64.69px; } }  /*i6Plus,i7Plus宽度*/  
-@media(max-width:375px){ html { font-size:58.59px; } }	/*i6,i7宽度*/
-@media(max-width:360px){ html { font-size:56.25px; } }	/*Android常用宽度*/
-@media(max-width:320px){ html { font-size:50px; } }		/*i5宽度*/
+@media screen and (max-width:374px) and (min-width:360px) {
+    html,body{
+        font-size: 56.25px !important;/*Android常用宽度*/
+    }
+}
+@media screen and (max-width:413px) and (min-width:375px) {
+   html,body{
+        font-size: 58.5px !important;/*i6,i7宽度*/
+    }
+}
+@media screen and (max-width:639px)  and (min-width:414px){
+   html,body{
+        font-size: 64.6px !important; /*i6Plus,i7Plus宽度*/  
+    }
+}
+@media screen and (min-width:640px) {
+   html,body{
+        font-size: 100px !important;
+    }
+}
 a{
     text-decoration: none;
 }
