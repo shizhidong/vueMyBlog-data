@@ -55,6 +55,7 @@
     }
     .header{
         background-color: #fff;
+        margin-top: -85px;
         .bk-header{
             height: auto;
             padding-bottom: 0.2rem;

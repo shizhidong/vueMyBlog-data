@@ -1,5 +1,5 @@
 <template>
-  <el-carousel indicator-position="none"  :interval="number" height="300px">
+  <el-carousel indicator-position="none"  :interval="number" :height="carouselHeight">
     <el-carousel-item v-for="(item,index) in picList" :key="index">
       <img :src="item.img">
     </el-carousel-item>
@@ -7,19 +7,7 @@
 </template>
 <script>
     export default{
-        data(){
-            return{
-                number:3000,
-                picList: [{
-                        "id":"1",
-                        "img":"../../static/images/timg.jpg"
-                        },
-                        {
-                        "id":"2",
-                        "img":"../../static/images/timg.jpg"
-                        }]
-            }
-        },
+        props:["picList","carouselHeight","number"]
     }
 </script>
 <style lang="less" scoped>

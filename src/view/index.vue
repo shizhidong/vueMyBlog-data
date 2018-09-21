@@ -3,7 +3,11 @@
         <Header></Header>
         <div class="bk-content">
             <div class="bk-contentLeft">
-                <Carousel></Carousel>
+                <my-carouse
+                :picList=picList
+                :carouselHeight=height
+                :number=number
+                />
                 <router-view></router-view>
             </div>
             <div class="bk-contentRight">
@@ -14,18 +18,25 @@
 </template>
 <script>
 import Header from '../components/header'
-import Carousel from '../components/carousel'
 import Tabs from '../components/tabs'
     export default{
         name:"index",
         data(){
             return{
-
+                height:"300px",//banner高度
+                number:5000,//滚动时间
+                 picList: [{
+                        "id":"1",
+                        "img":"../../static/images/timg.jpg"
+                        },
+                        {
+                        "id":"2",
+                        "img":"../../static/images/timg.jpg"
+                        }]
             }
         },
         components:{
            Header,
-           Carousel,
            Tabs
         }
     }
