@@ -1,24 +1,33 @@
 <template>
-    <div class="tabs">
-        <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane v-for="(item,index) in tabsList" :label="item.tabsName" :name="item.clickName">
-                    <ul>
-                        <li v-for="(item1,index) in item.tabes">
-                            <el-row :gutter="10">
-                                <el-col :span="15">
-                                    <p class="index_recd"><a href="javascript:;">{{item1.tabsTitle}}</a></p>
-                                </el-col>
-                                <el-col :span="9">
-                                    <p class="index_data">{{item1.tabsData}}</p>
-                                </el-col>
-                            </el-row>
-                        </li>
-                    </ul>
-            </el-tab-pane>
-             <el-tab-pane label="联系站长" name="fourth">
-                 <p class="ContactMaster"><span>联系方式（QQ）：</span>59317748</p>
-             </el-tab-pane>
-        </el-tabs>
+    <div>
+        <div class="tabs">
+            <el-tabs v-model="activeName" @tab-click="handleClick">
+                <el-tab-pane v-for="(item,index) in tabsList" :label="item.tabsName" :name="item.clickName" :key="index">
+                        <ul>
+                            <li v-for="(item1,index) in item.tabes" :key="index">
+                                <el-row :gutter="10">
+                                    <el-col :span="15">
+                                        <p class="index_recd"><a href="javascript:;">{{item1.tabsTitle}}</a></p>
+                                    </el-col>
+                                    <el-col :span="9">
+                                        <p class="index_data">{{item1.tabsData}}</p>
+                                    </el-col>
+                                </el-row>
+                            </li>
+                        </ul>
+                </el-tab-pane>
+                <el-tab-pane label="联系站长" name="fourth">
+                    <p class="ContactMaster"><span>联系方式（QQ）：</span>59317748</p>
+                </el-tab-pane>
+            </el-tabs>
+        </div>
+        <div class="search">
+            <el-input
+                placeholder="请输入内容"
+                prefix-icon="el-icon-search"
+                v-model="input21">
+            </el-input>
+        </div>
      </div>
 </template>
 <script>
@@ -27,6 +36,7 @@
     data() {
       return {
         activeName: 'first',
+        input21:"",
         tabsList:[
             {
                 "id":"1",
@@ -91,6 +101,12 @@
                 }
             }
         }
+    }
+    .search{
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 0.1rem 0.1rem;
+        font-size: 0.25rem;
     }
     .index_recd{
         font-size: 0.14rem;
