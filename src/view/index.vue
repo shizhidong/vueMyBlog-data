@@ -3,6 +3,7 @@
         <Header></Header>
         <div class="bk-content">
             <div class="bk-contentLeft">
+                <!--跑马灯-->
                 <my-carouse
                 :picList=picList
                 :carouselHeight=height
@@ -12,7 +13,16 @@
             </div>
             <div class="bk-contentRight">
                 <Tabs></Tabs>
+                <div class="aaa">
+                <!--关于我-->
+                <my-aboutAssembly
+                :srcImg=srcImg
+                :BloggerName=BloggerName
+                :BloggerTexy=BloggerTexy
+                />
             </div>
+            </div>
+            
         </div>
     </div>
 </template>
@@ -23,6 +33,9 @@ import Tabs from '../components/tabs'
         name:"index",
         data(){
             return{
+                srcImg:"",
+                BloggerName:"",
+                BloggerTexy:"",
                 height:"300px",//banner高度
                 number:5000,//滚动时间
                  picList: [{
@@ -38,6 +51,16 @@ import Tabs from '../components/tabs'
         components:{
            Header,
            Tabs
+        },
+        mounted(){
+            this.initData();
+        },
+        methods:{
+            initData(){
+               this.srcImg=fakedata.BloggerList[0].srcImg;
+               this.BloggerName=fakedata.BloggerList[0].BloggerName;
+               this.BloggerTexy=fakedata.BloggerList[0].BloggerTexy;
+            }
         }
     }
 </script>

@@ -80,11 +80,16 @@
     }
   };
 </script>
+<style>
+  .tabs .el-tabs__nav-scroll{
+     margin-top: -0.8rem;
+    }
+</style>
 <style lang="less" scoped>
     .tabs{
         background-color: #fff;
-        padding: 0rem 0.1rem;
-        margin-top:-0.80rem;
+        padding: 0.1rem 0.1rem;
+        border:1px solid #ddd;
         ul{
             li{
                 line-height: 30px;
@@ -107,6 +112,7 @@
         background-color: #fff;
         padding: 0.1rem 0.1rem;
         font-size: 0.25rem;
+        border:1px solid #ddd;
     }
     .index_recd{
         font-size: 0.14rem;
@@ -131,4 +137,5 @@
             font-weight: 500;
         }
     }
+   
 </style>

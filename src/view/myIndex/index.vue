@@ -39,7 +39,7 @@
 </script>
 <style lang="less" scoped>
     .recommend{
-        border:1px solid #eaeaea;
+        border:1px solid #ddd;
         background-color: #fff;
         padding:0.15rem;
         margin-top:0.2rem;

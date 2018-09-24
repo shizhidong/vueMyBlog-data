@@ -14,7 +14,11 @@ html,body{
     "Microsoft YaHei UI",
     "WenQuanYi Micro Hei",
     sans-serif;
-    background-color: #f6f6f6;
+    background-color: #f1f1f1;
+}
+img{
+    width:100%!important;
+    height:100%!important;
 }
 
 /*移动端适配 width|height|font-size = 视觉稿量出来的值 / 100rem;@lbl*/

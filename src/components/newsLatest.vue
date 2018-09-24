@@ -10,6 +10,7 @@
                         <h5  @click="newsClick(item.id)"><a href="javascript:;">{{item.newsTitle}}</a></h5>
                         <p>{{item.newsContent}}</p>
                     </div>
+                    <p class="bk-time"><span>发布时间：</span>{{item.time}}</p>
                 </el-col>
             </el-row>
         </div>
@@ -30,6 +31,7 @@
             background-color: #fff;
             padding:0.15rem;
             margin:0.2rem 0rem;
+            border:1px solid #ddd;
             .bk-pic{
                 width:90%;
                 height:1.1rem;
@@ -59,6 +61,12 @@
                     font-weight: 500;
                     margin-top:0.1rem;
                 }
+            }
+            .bk-time{
+                color:#a3a1a1;
+                font-size: 0.12rem;
+                float:right;
+                margin-top: 20px;
             }
             .imgCss{
                 width:100%;
