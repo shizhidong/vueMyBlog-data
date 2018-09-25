@@ -46,6 +46,24 @@ var fakedata = {
             "BloggerName":"史志东",
             "BloggerTexy":"一个80后草根男站长！14年入行。一直潜心研究web前端技术，一边工作一边积累经验，分享一些个人博客模板，以及SEO优化等心得。"
         }
+    ],
+    //友情链接
+    friendshipLink:[
+        {
+            "id":"1",
+            "href":"http://s.ilab.cn",
+            "linkName":"ilab(上海拂晓)"
+        },
+        {
+            "id":"2",
+            "href":"http://www.baidu.com",
+            "linkName":"百度"
+        },
+        {
+            "id":"3",
+            "href":"http://www.51tudou.cn",
+            "linkName":"东东的个人博客"
+        }
     ]
 
 

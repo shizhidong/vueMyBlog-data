@@ -12,15 +12,20 @@
                 <router-view></router-view>
             </div>
             <div class="bk-contentRight">
+               <my-weatherForecast/>
                 <Tabs></Tabs>
                 <div class="aaa">
-                <!--关于我-->
-                <my-aboutAssembly
-                :srcImg=srcImg
-                :BloggerName=BloggerName
-                :BloggerTexy=BloggerTexy
-                />
-            </div>
+                    <!--关于我-->
+                    <my-aboutAssembly
+                    :srcImg=srcImg
+                    :BloggerName=BloggerName
+                    :BloggerTexy=BloggerTexy
+                    />
+                    <!--友情链接-->
+                    <my-friendshipLink
+                    :friendshipLink=friendshipLink
+                    />
+                </div>
             </div>
             
         </div>
@@ -36,6 +41,7 @@ import Tabs from '../components/tabs'
                 srcImg:"",
                 BloggerName:"",
                 BloggerTexy:"",
+                friendshipLink:[],
                 height:"300px",//banner高度
                 number:5000,//滚动时间
                  picList: [{
@@ -60,6 +66,8 @@ import Tabs from '../components/tabs'
                this.srcImg=fakedata.BloggerList[0].srcImg;
                this.BloggerName=fakedata.BloggerList[0].BloggerName;
                this.BloggerTexy=fakedata.BloggerList[0].BloggerTexy;
+               //友情链接
+              this.friendshipLink = fakedata.friendshipLink;
             }
         }
     }
