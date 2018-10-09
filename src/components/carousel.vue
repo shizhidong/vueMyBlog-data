@@ -1,5 +1,5 @@
 <template>
-  <el-carousel indicator-position="none"  :interval="number" :height="carouselHeight">
+  <el-carousel indicator-position="none"  :interval="number" :height="carouselHeight" v-if="carouselIsShow">
     <el-carousel-item v-for="(item,index) in picList" :key="index">
       <img :src="item.img">
     </el-carousel-item>
@@ -7,7 +7,12 @@
 </template>
 <script>
     export default{
-        props:["picList","carouselHeight","number"]
+        props:["picList","carouselHeight","number"],
+        computed:{
+            carouselIsShow(){
+                return this.$store.state.carouselIsShow;
+            }
+        }
     }
 </script>
 <style lang="less" scoped>

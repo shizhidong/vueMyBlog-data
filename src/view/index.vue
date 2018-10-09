@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-       <!-- <div style="font-size:0.12rem"> {{weatherList}}</div> -->
         <Header></Header>
         <div class="bk-content">
             <div class="bk-contentLeft">
@@ -83,15 +82,27 @@ import Tabs from '../components/tabs'
         },
         mounted(){
             this.initData();
-            this.fetchData();
+            this.fetchData();           
+        },
+        watch:{
+            $route(to,from){
+                if(to.path=='/Detail'){
+                this.$store.dispatch("actionIncrease");//跑马灯
+                }else{
+                this.$store.dispatch("actionIncreaseShow");//跑马灯
+                }
+            }
         },
         methods:{
             initData(){
-               this.srcImg=fakedata.BloggerList[0].srcImg;
-               this.BloggerName=fakedata.BloggerList[0].BloggerName;
-               this.BloggerTexy=fakedata.BloggerList[0].BloggerTexy;
-               //友情链接
-              this.friendshipLink = fakedata.friendshipLink;
+                this.srcImg=fakedata.BloggerList[0].srcImg;
+                this.BloggerName=fakedata.BloggerList[0].BloggerName;
+                this.BloggerTexy=fakedata.BloggerList[0].BloggerTexy;
+                //友情链接
+                this.friendshipLink = fakedata.friendshipLink;
+                if(this.$route.name=='Detail'){//判断是否为详情页面 是：跑马灯隐藏  否则 显示
+                    this.$store.dispatch("actionIncrease");
+                }
             },
             fetchData: async function () {
             let params = {
@@ -111,7 +122,9 @@ import Tabs from '../components/tabs'
                     this.type = res.data.data.forecast[0].type
                     
                 })
-            }
+            },
+
+
         }
     }
 </script>

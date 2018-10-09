@@ -26,7 +26,6 @@
 <style scoped lang="less">
     .bk-about{
         background-color: #fff;
-        margin-top: 0.2rem;
         border:1px solid #ddd;
         h5{
             font-size: 0.15rem;

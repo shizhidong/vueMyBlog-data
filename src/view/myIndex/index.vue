@@ -25,6 +25,7 @@
         mounted(){
             this.initData();
         },
+        
         methods:{
             initData(){
                 this.newsList=fakedata.newsList;
@@ -32,7 +33,12 @@
                 this.recommendsContent=fakedata.todayRecommends[0].content;
             },
             myClick(id){
-                alert("2312312你好"+id)
+                this.$router.push({
+                    path:"/Detail",
+                    query:{//通过query 传递参数
+                        goodsDetail:id,
+                    }
+                })
             }
         }
     }

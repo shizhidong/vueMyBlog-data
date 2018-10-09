@@ -4,7 +4,7 @@
             <h5>关于我</h5>
             <div class="abBg">
                 <div class="avatar"> <img :src="srcImg" alt=""> </div>
-                <p class="abname">{{BloggerName}}</p>
+                <p class="abname"><router-link :to="{name:'MyAbout'}">{{BloggerName}}</router-link></p>
                 <p class="abtext">{{BloggerTexy}}</p>
             </div>
         </div>
@@ -40,10 +40,16 @@
                font-size: 0.2rem;
             }
             .abname {
-                color: #3f3f3f;
+                
                 font-weight: bold;
                 font-size: 0.15rem;
                 margin-bottom: 5px;
+                a{
+                   color: #3f3f3f;
+                   &:hover{
+                       color:#11a0f2
+                   }
+                }
             }
             .abtext {
                 color: #9a9a9a;
