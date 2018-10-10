@@ -161,6 +161,55 @@ const timestampToTime = (timestamp) => {
     let s = date.getSeconds()
     return Y + M + D + h + m + s
 }
+
+
+
+
+/**
+* 获取cookie、
+* 已注入所有Vue实例，
+* template模板里调用 $getCookie
+* 组件方法里调用 this.$getCookie
+* 例：this.$getCookie("name")
+*/
+const getCookie = (name) => {
+    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+    if (arr = document.cookie.match(reg))
+     return (arr[2]);
+    else
+     return null;
+}
+
+    
+   //设置cookie,增加到vue实例方便全局调用
+/**
+* 设置cookie、
+* 已注入所有Vue实例，
+* template模板里调用 $setCookie
+* 组件方法里调用 this.$setCookie
+* 例：this.$setCookie("name")
+*/
+   const setCookie = (c_name, value, expiredays) =>{
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate() + expiredays);
+        document.cookie = c_name + "=" + escape(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
+   }
+
+    
+   //删除cookie
+   const delCookie = (name) =>{
+    var exp = new Date();
+    exp.setTime(exp.getTime() - 1);
+    var cval = getCookie(name);
+    if (cval != null)
+     document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+   }
+
+   
+
+
+
+
 Vue.prototype.$imgPreview = imgPreview
 Vue.prototype.$dateFormat = dateFormat
 Vue.prototype.$dateFormatNoTime = dateFormatNoTime
@@ -169,3 +218,6 @@ Vue.prototype.$outputXlsxFile = outputXlsxFile
 Vue.prototype.$checkTime = checkTime
 Vue.prototype.$typeSex = typeSex
 Vue.prototype.$timestampToTime = timestampToTime
+Vue.prototype.$getCookie = getCookie
+Vue.prototype.$setCookie = setCookie
+Vue.prototype.$delCookie = delCookie

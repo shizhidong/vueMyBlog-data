@@ -7,11 +7,17 @@ import MyPhoto from '@/view/myPhoto/'//我的相册
 import MyWorkFragment from '@/view/myWorkFragment/'//我的工作片段
 import MyAbout from '@/view/MyAbout/'//关于我
 import Detail from '@/view/detail/'//详情页面
+import Login from '@/view/Login'//登录页面
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path:"/Login",
+      name:"Login",
+      component:Login
+    },
     {
       path: '/',
       name: 'Index',
@@ -35,7 +41,10 @@ export default new Router({
         {
           path:'/MyPhoto',
           name:'MyPhoto',
-          component:MyPhoto
+          component:MyPhoto,
+          meta:{
+            requireAuth: false
+          }
         },
         {
           path:'/MyWorkFragment',

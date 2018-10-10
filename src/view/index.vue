@@ -90,10 +90,12 @@ import Tabs from '../components/tabs'
             $route(to,from){
                 if(to.path=='/Detail'){
                 this.$store.dispatch("actionIncrease");//跑马灯
-                }else{
+                }
+                else{
                 this.$store.dispatch("actionIncreaseShow");//跑马灯
                 }
             }
+
         },
         methods:{
             initData(){
