@@ -1,3 +1,6 @@
 export default {
-    url:"/weather/city/101020100"
+  weather:{
+      url:"/weather/city/101020100"
+    }
+   
   }

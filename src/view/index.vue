@@ -82,7 +82,9 @@ import Tabs from '../components/tabs'
         },
         mounted(){
             this.initData();
-            this.fetchData();           
+            this.fetchData();   
+            let data = new Date();
+            console.log(this.$timestampToTime(1539156195000))       
         },
         watch:{
             $route(to,from){
@@ -108,7 +110,7 @@ import Tabs from '../components/tabs'
             let params = {
                 
             }
-            this.$http.get(this.$api.url, params)
+            this.$http.get(this.$api.weather.url, params)
                 .then((res)=>{
                     this.city = res.data.cityInfo.city
                     this.ganmao = res.data.data.ganmao
