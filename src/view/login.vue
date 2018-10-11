@@ -6,7 +6,7 @@
                     <el-input v-model="formLabelAlign.username"></el-input>
                 </el-form-item>
                 <el-form-item label="密码">
-                    <el-input v-model="formLabelAlign.password"></el-input>
+                    <el-input type="password" v-model="formLabelAlign.password"></el-input>
                 </el-form-item>
                 <el-form-item  style="text-align:center">
                     <el-button type="primary" @click="submitForm()">登录</el-button>
@@ -22,14 +22,20 @@
         labelPosition: 'right',
         formLabelAlign: {
           username: '',
-          password: ''
+          password: '',
+          pangdahaiUserName:"admin",
+          pangdahaiPassword:"123456",
+          cosett:"shizhidong221700"
         }
       };
     },
     methods:{
         submitForm(){
-            if(this.formLabelAlign.username==="admin" && this.formLabelAlign.password==="123456"){
-                this.$setCookie('abc', 'shizhidong221700', 1)
+           let pangdahaiUserName = this.formLabelAlign.pangdahaiUserName;
+           let pangdahaiPassword = this.formLabelAlign.pangdahaiPassword;
+           
+            if(this.formLabelAlign.username===pangdahaiUserName && this.formLabelAlign.password===pangdahaiPassword){
+                this.$setCookie('abc', this.formLabelAlign.cosett, 1)
                 this.$router.push({
                     path:"/MyPhoto"
                 })

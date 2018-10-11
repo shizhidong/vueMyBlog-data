@@ -43,7 +43,7 @@ export default new Router({
           name:'MyPhoto',
           component:MyPhoto,
           meta:{
-            requireAuth: false
+            requireAuth: true
           }
         },
         {
@@ -62,3 +62,4 @@ export default new Router({
 
   ]
 })
+
