@@ -23,12 +23,13 @@
                 </el-col>
                 <el-col :span="16">
                     <div class="grid-content right">
+                       {{navList}}
                         <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal">
-                            <el-menu-item index="1"><router-link :to="{name:'MyIndex'}">首页</router-link></el-menu-item>
-                            <el-menu-item index="2"><router-link :to="{name:'ResumeCenter'}">简历中心</router-link></el-menu-item>
-                            <el-menu-item index="3"><router-link :to="{name:'Login'}">相册</router-link></el-menu-item>
-                            <el-menu-item index="4"><router-link :to="{name:'MyWorkFragment'}">工作片段</router-link></el-menu-item>
-                            <el-menu-item index="5"><router-link :to="{name:'MyAbout'}">关于我</router-link></el-menu-item>
+                            <el-menu-item index="1"><router-link :to="{name:'MyIndex', params:{id: 1}}">首页</router-link></el-menu-item>
+                            <el-menu-item index="2"><router-link :to="{name:'ResumeCenter', params:{id: 2} }">简历中心</router-link></el-menu-item>
+                            <el-menu-item index="3"><router-link :to="{name:'Login', params:{id: 3}}">相册</router-link></el-menu-item>
+                            <el-menu-item index="4"><router-link :to="{name:'MyWorkFragment', params:{id: 4}}">工作片段</router-link></el-menu-item>
+                            <el-menu-item index="5"><router-link :to="{name:'MyAbout', params:{id: 5}}">关于我</router-link></el-menu-item>
                         </el-menu>
                     </div>
                 </el-col>
@@ -40,9 +41,17 @@
     export default{
         data(){
             return{
-                activeIndex: '1'
+                activeIndex: "1"
             }
         },
+        computed:{
+            navList:function(){
+              return this.$store.state.navNumber
+            }
+        },
+        // mounted(){
+        //     this.activeIndex=this.$store.state.navNumber
+        // },
         methods: {
            
         }

@@ -22,7 +22,6 @@
                 this.content = fakedata.aboutMy[0].content;
             }
         }
-
     }
 </script>
 <style scoped lang="less">
