@@ -7,12 +7,15 @@
     export default{
         data(){
             return{
-                id:2
+              
+              
             }
         },
+       
         mounted() {
-            this.$store.state.navNumber=this.id
-        },
+            // this.$store.state.navNumber=this.id
+        }
+       
     }
 
 </script>
