@@ -23,14 +23,3 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
-
-// router.beforeEach((to, from, next) => {
-//   if(to.path=="/MyPhoto"){
-//     if(this.$getCookie("abc")==="shizhidong221700"){
-//         alert("1")
-//     }else{
-//       alert("2")
-//     }
-      
-//   }
-// })

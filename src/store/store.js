@@ -3,7 +3,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
     state:{
-        carouselIsShow:true//跑马灯是否显示
+        carouselIsShow:true,//跑马灯是否显示
+        navNumber:"0"
     },
     mutations:{
         increase(state){
@@ -20,6 +21,7 @@ const store = new Vuex.Store({
         actionIncreaseShow({commit}){
             commit('increaseShow')
         }
+       
     }
 })
 export default store;

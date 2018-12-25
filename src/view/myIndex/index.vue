@@ -22,6 +22,11 @@
                 recommendsContent:""
             }
         },
+        computed:{
+            masgrt:function(){
+                return this.$store.state.navNumber
+            }
+        },
         mounted(){
             this.initData();
         },
