@@ -3,7 +3,7 @@
         <div class="bk-about">
             <h5>友情链接</h5>
             <div class="abBg">
-                <p v-for="(item,index) in friendshipLink"><a :href="item.href" target="_blank">{{item.linkName}}</a></p>
+                <p v-for="(item,index) in friendshipLink" :key="index"><a :href="item.href" target="_blank">{{item.linkName}}</a></p>
             </div>
         </div>
     </div>
