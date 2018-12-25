@@ -9,7 +9,7 @@ export default {
   name: 'App',
 
   mounted(){
-  // this.doNothing();
+    this.doNothing();
   },
   methods:{
     doNothing(){//禁用右键和F12
