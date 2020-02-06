@@ -83,8 +83,7 @@ import Tabs from '../components/tabs'
         mounted(){
             this.initData();
             this.fetchData();   
-            let data = new Date();
-            console.log(this.$timestampToTime(1539156195000))       
+            let data = new Date();     
         },
         watch:{
             $route(to,from){

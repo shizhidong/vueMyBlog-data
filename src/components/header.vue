@@ -23,7 +23,6 @@
                 </el-col>
                 <el-col :span="16">
                     <div class="grid-content right">
-                       {{navList}}
                         <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal">
                             <el-menu-item index="1"><router-link :to="{name:'MyIndex', params:{id: 1}}">首页</router-link></el-menu-item>
                             <el-menu-item index="2"><router-link :to="{name:'ResumeCenter', params:{id: 2} }">简历中心</router-link></el-menu-item>
@@ -38,6 +37,7 @@
     </div>  
 </template>
 <script>
+import { mapState } from 'vuex'
     export default{
         data(){
             return{
@@ -45,13 +45,10 @@
             }
         },
         computed:{
-            navList:function(){
-              return this.$store.state.navNumber
-            }
+            ...mapState({
+                navList:state=>state.navNumber
+            })
         },
-        // mounted(){
-        //     this.activeIndex=this.$store.state.navNumber
-        // },
         methods: {
            
         }

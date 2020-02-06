@@ -1,6 +1,6 @@
 <template>
-    <div>
-        简历中心
+    <div class="resume">
+        更新中...
     </div>
 </template>
 <script>
@@ -19,3 +19,8 @@
     }
 
 </script>
+<style scoped>
+    .resume{
+        font-size: 0.14rem
+    }
+</style>

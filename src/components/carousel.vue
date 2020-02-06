@@ -6,12 +6,13 @@
   </el-carousel>
 </template>
 <script>
+import {mapState} from 'vuex'
     export default{
         props:["picList","carouselHeight","number"],
         computed:{
-            carouselIsShow(){
-                return this.$store.state.carouselIsShow;
-            }
+          ...mapState({
+              carouselIsShow:state=>state.carouselIsShow
+          })
         }
     }
 </script>

@@ -10,6 +10,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import store from './store/store.js'
 
 
+
 Vue.use(ElementUI);
 Vue.use(carousel);
 Vue.use(asIndex);

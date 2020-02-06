@@ -4,7 +4,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state:{
         carouselIsShow:true,//跑马灯是否显示
-        navNumber:"0"
+        navNumber:"0333"
     },
     mutations:{
         increase(state){
